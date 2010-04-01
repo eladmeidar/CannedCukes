@@ -14,7 +14,10 @@ ActionController::Routing::Routes.draw do |map|
   map.reset_instructions '/reset_password_instructions', :controller => 'users', :action => 'reset_instructions'
   map.reset_password '/reset_password/:code', :controller => 'users', :action => 'reset_password', :code => nil
   map.update_password '/update_password', :controller => 'users', :action => 'update_password'
-  map.resources :users, :member => {:activation => :get, :forgot => :get}
+  map.resources :users, :member => {:activation => :get, :forgot => :get} do |users|
+    users.resources :features
+  end
+  
   map.resource :session
   map.resource :dashboard, :controller => "dashboard"
   
