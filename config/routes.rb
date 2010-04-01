@@ -1,43 +1,22 @@
 ActionController::Routing::Routes.draw do |map|
-  # The priority is based upon order of creation: first created -> highest priority.
-
-  # Sample of regular route:
-  #   map.connect 'products/:id', :controller => 'catalog', :action => 'view'
-  # Keep in mind you can assign values other than :controller and :action
-
-  # Sample of named route:
-  #   map.purchase 'products/:id/purchase', :controller => 'catalog', :action => 'purchase'
-  # This route can be invoked with purchase_url(:id => product.id)
-
-  # Sample resource route (maps HTTP verbs to controller actions automatically):
-  #   map.resources :products
-
-  # Sample resource route with options:
-  #   map.resources :products, :member => { :short => :get, :toggle => :post }, :collection => { :sold => :get }
-
-  # Sample resource route with sub-resources:
-  #   map.resources :products, :has_many => [ :comments, :sales ], :has_one => :seller
   
-  # Sample resource route with more complex sub-resources
-  #   map.resources :products do |products|
-  #     products.resources :comments
-  #     products.resources :sales, :collection => { :recent => :get }
-  #   end
-
-  # Sample resource route within a namespace:
-  #   map.namespace :admin do |admin|
-  #     # Directs /admin/products/* to Admin::ProductsController (app/controllers/admin/products_controller.rb)
-  #     admin.resources :products
-  #   end
-
-  # You can have the root of your site routed with map.root -- just remember to delete public/index.html.
-  # map.root :controller => "welcome"
-
-  # See how all your routes lay out with "rake routes"
-
-  # Install the default routes as the lowest priority.
-  # Note: These default routes make all actions in every controller accessible via GET requests. You should
-  # consider removing or commenting them out if you're using named routes and resources.
-  map.connect ':controller/:action/:id'
-  map.connect ':controller/:action/:id.:format'
+  # Login/logout
+  map.logout '/logout', :action => 'destroy', :controller => 'sessions'
+  map.login '/login', :action => 'new', :controller => 'sessions'
+  map.register '/register', :action => 'create', :controller => 'users'
+  map.signup '/signup', :action => 'new', :controller => 'users'
+  
+  # Activation
+  map.activate '/activate/:activation_code', :action => 'activate', :controller => 'users', :activation_code => ''
+  
+  # Password restore
+  map.forgot_password '/forgot', :controller => 'users', :action => 'forgot'
+  map.reset_instructions '/reset_password_instructions', :controller => 'users', :action => 'reset_instructions'
+  map.reset_password '/reset_password/:code', :controller => 'users', :action => 'reset_password', :code => nil
+  map.update_password '/update_password', :controller => 'users', :action => 'update_password'
+  map.resources :users, :member => {:activation => :get, :forgot => :get}
+  map.resource :session
+  map.resource :dashboard, :controller => "dashboard"
+  
+  map.root :controller => 'sessions', :action => 'new'
 end
