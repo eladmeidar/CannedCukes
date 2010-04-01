@@ -43,6 +43,10 @@ module NavigationHelpers
     
     when /my features page/
       user_features_url(User.first)
+    
+    when /new scenario page/
+      user = User.first
+      new_user_feature_scenario_path(user, user.features.first)
     # Add more mappings here.
     # Here is an example that pulls values out of the Regexp:
     #

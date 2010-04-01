@@ -24,6 +24,13 @@ class FeaturesController < ApplicationController
 
   def show
     @feature = current_user.features.find(params[:feature_id] || params[:id])
+    
+    respond_to do |page|
+      page.html
+      page.txt
+      page.json { render :json => @feature.to_json(:include => :scenarios)}
+      page.xml { render :json => @feature.to_xml(:include => :scenarios)} 
+    end
   end
   
   def create

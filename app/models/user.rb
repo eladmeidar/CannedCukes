@@ -27,6 +27,10 @@ class User < ActiveRecord::Base
 
   has_many :features, :order => 'created_at'
 
+  def features_for_select
+    features.collect {|feature| [feature.title, feature.id]}
+  end
+  
   # Activates the user in the database.
   def activate!
     @activated = true

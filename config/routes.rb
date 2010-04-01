@@ -15,8 +15,12 @@ ActionController::Routing::Routes.draw do |map|
   map.reset_password '/reset_password/:code', :controller => 'users', :action => 'reset_password', :code => nil
   map.update_password '/update_password', :controller => 'users', :action => 'update_password'
   map.resources :users, :member => {:activation => :get, :forgot => :get} do |users|
-    users.resources :features
+    users.resources :features do |features|
+      features.resources :scenarios
+    end
   end
+  
+  map.resources :scenarios
   
   map.resource :session
   map.resource :dashboard, :controller => "dashboard"
