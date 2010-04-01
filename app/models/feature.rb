@@ -5,10 +5,7 @@ class Feature < ActiveRecord::Base
   validates_presence_of :title, :allow_blank => false
   
   belongs_to :user
-  
-  def scenarios
-    3
-  end
+  has_many :scenarios
   
   def to_param
     "#{id}-#{sluggify(title)}"
