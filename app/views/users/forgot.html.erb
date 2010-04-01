@@ -1,0 +1,6 @@
+<% title 'Forgot your Password?'%>
+<% form_tag reset_instructions_url do %>
+  <%= label_tag :email %>
+  <%= text_field_tag :email %>
+  <%= submit_tag "Send me the Password Reset instructions" %>
+<% end %>

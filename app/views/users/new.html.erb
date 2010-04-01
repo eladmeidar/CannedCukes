@@ -1,0 +1,18 @@
+<h1>Sign up as a new user</h1>
+
+<% form_for :user, :url => users_path do |f| -%>
+<%= f.error_messages %>
+<p><%= f.label :login %><br/>
+<%= f.text_field :login %></p>
+
+<p><%= f.label :email %><br/>
+<%= f.text_field :email %></p>
+
+<p><%= f.label :password %><br/>
+<%= f.password_field :password %></p>
+
+<p><%= f.label :password_confirmation, 'Confirm Password' %><br/>
+<%= f.password_field :password_confirmation %></p>
+
+<p><%= f.submit 'Sign up' %></p>
+<% end -%>
