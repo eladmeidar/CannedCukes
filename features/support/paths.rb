@@ -36,7 +36,13 @@ module NavigationHelpers
       reset_password_path(:code => User.find(:first, :conditions => {:email => $1}).reset_token )
     
     when /the password reset instruction page/
-      reset_instructions_path  
+      reset_instructions_path 
+      
+    when /my new features page/
+      new_user_feature_url(User.first)
+    
+    when /my features page/
+      user_features_url(User.first)
     # Add more mappings here.
     # Here is an example that pulls values out of the Regexp:
     #

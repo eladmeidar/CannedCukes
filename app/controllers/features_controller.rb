@@ -1,6 +1,6 @@
 class FeaturesController < ApplicationController
 
-	before_filter :login_required
+	before_filter :login_required, :assign_user
 	
   def index
     @features = current_user.features
@@ -35,6 +35,7 @@ class FeaturesController < ApplicationController
         page.xml { render :xml => @feature.errors, :status => :unprocessable_entity }
       end
     else
+      flash[:notice] = "Feature created successfully"
       respond_to do |page|
         page.html { redirect_to user_feature_url(current_user, @feature)}
         page.json { render :json => @feature }
@@ -66,6 +67,7 @@ class FeaturesController < ApplicationController
         page.xml { render :xml => @feature.errors, :status => :unprocessable_entity }
       end
     else
+      flash[:notice] = "Feature updated successfully"
       respond_to do |page|
         page.html { redirect_to user_feature_url(current_user, @feature)}
         page.json { render :json => @feature }
@@ -75,6 +77,29 @@ class FeaturesController < ApplicationController
   end
 
   def destroy
+    @feature = current_user.features.find(params[:id])
+    
+    if @feature.blank?
+      flash[:error] = "Oops! couldn't find the feature you are looking for."
+      respond_to do |page|
+        page.html { redirect_to user_features_url(current_user) }
+        page.json { render :json => @feature.errors, :status => :unprocessable_entity }
+        page.xml { render :xml => @feature.errors, :status => :unprocessable_entity }
+      end
+    else
+      @feature.destroy
+      flash[:notice] = "Feature deleted successfully."
+      respond_to do |page|
+        page.html { redirect_to user_features_url(current_user)}
+        page.json { render :nothing => true, :status => 200 }
+        page.xml { render :nothing => true, :status => 200 }
+      end
+    end
   end
 
+  protected
+  
+  def assign_user
+    @user = current_user
+  end
 end

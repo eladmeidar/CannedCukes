@@ -97,3 +97,372 @@ Completed in 15ms (View: 9, DB: 0) | 200 OK [http://localhost/users/new]
   [4;36;1mSQL (0.1ms)[0m   [0;1mSELECT version FROM "schema_migrations"[0m
   [4;35;1mSQL (1.3ms)[0m   [0mINSERT INTO "schema_migrations" (version) VALUES ('20100330132055')[0m
   [4;36;1mSQL (1.6ms)[0m   [0;1mINSERT INTO "schema_migrations" (version) VALUES ('20100326213021')[0m
+  [4;36;1mSQL (0.4ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSELECT version FROM schema_migrations[0m
+Migrating to CreateUsers (20100326213021)
+Migrating to AddResetTokenToUsers (20100330132055)
+Migrating to CreateFeatures (20100401153619)
+  [4;36;1mSQL (0.1ms)[0m   [0;1mselect sqlite_version(*)[0m
+  [4;35;1mSQL (0.3ms)[0m   [0mCREATE TABLE "features" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "title" varchar(255), "user_id" integer, "created_at" datetime, "updated_at" datetime) [0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mINSERT INTO schema_migrations (version) VALUES ('20100401153619')[0m
+  [4;35;1mSQL (0.2ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSELECT version FROM schema_migrations[0m
+  [4;35;1mSQL (0.1ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mPRAGMA index_list("features")[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mPRAGMA index_list("users")[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mPRAGMA index_info('index_users_on_login')[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mselect sqlite_version(*)[0m
+  [4;35;1mSQL (0.3ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSELECT version FROM schema_migrations[0m
+  [4;35;1mSQL (0.1ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mPRAGMA index_list("features")[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mPRAGMA index_list("users")[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mPRAGMA index_info('index_users_on_login')[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mselect sqlite_version(*)[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (2.1ms)[0m   [0mCREATE TABLE "features" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "title" varchar(255), "user_id" integer, "created_at" datetime, "updated_at" datetime) [0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (1.5ms)[0m   [0mCREATE TABLE "users" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "login" varchar(40), "crypted_password" varchar(40), "salt" varchar(40), "remember_token" varchar(40), "remember_token_expires_at" datetime, "name" varchar(100) DEFAULT '', "email" varchar(100), "activation_code" varchar(40), "activated_at" datetime, "created_at" datetime, "updated_at" datetime, "reset_token" varchar(255)) [0m
+  [4;36;1mSQL (1.6ms)[0m   [0;1mCREATE UNIQUE INDEX "index_users_on_login" ON "users" ("login")[0m
+  [4;35;1mSQL (0.2ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (1.7ms)[0m   [0;1mCREATE TABLE "schema_migrations" ("version" varchar(255) NOT NULL) [0m
+  [4;35;1mSQL (1.8ms)[0m   [0mCREATE UNIQUE INDEX "unique_schema_migrations" ON "schema_migrations" ("version")[0m
+  [4;36;1mSQL (0.2ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSELECT version FROM "schema_migrations"[0m
+  [4;36;1mSQL (1.9ms)[0m   [0;1mINSERT INTO "schema_migrations" (version) VALUES ('20100401153619')[0m
+  [4;35;1mSQL (1.9ms)[0m   [0mINSERT INTO "schema_migrations" (version) VALUES ('20100326213021')[0m
+  [4;36;1mSQL (1.4ms)[0m   [0;1mINSERT INTO "schema_migrations" (version) VALUES ('20100330132055')[0m
+  [4;36;1mSQL (0.4ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSELECT version FROM schema_migrations[0m
+Migrating to CreateUsers (20100326213021)
+Migrating to AddResetTokenToUsers (20100330132055)
+Migrating to CreateFeatures (20100401153619)
+  [4;36;1mSQL (0.1ms)[0m   [0;1mselect sqlite_version(*)[0m
+  [4;35;1mSQL (0.1ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSELECT version FROM schema_migrations[0m
+  [4;35;1mSQL (0.1ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mPRAGMA index_list("features")[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mPRAGMA index_list("users")[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mPRAGMA index_info('index_users_on_login')[0m
+  [4;36;1mSQL (0.4ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSELECT version FROM schema_migrations[0m
+Migrating to CreateUsers (20100326213021)
+Migrating to AddResetTokenToUsers (20100330132055)
+Migrating to CreateFeatures (20100401153619)
+  [4;36;1mSQL (0.1ms)[0m   [0;1mselect sqlite_version(*)[0m
+  [4;35;1mSQL (0.1ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSELECT version FROM schema_migrations[0m
+  [4;35;1mSQL (0.1ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mPRAGMA index_list("features")[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mPRAGMA index_list("users")[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mPRAGMA index_info('index_users_on_login')[0m
+  [4;36;1mFeature Load (0.3ms)[0m   [0;1mSELECT * FROM "features" LIMIT 1[0m
+  [4;35;1mFeature Create (0.3ms)[0m   [0mINSERT INTO "features" ("created_at", "title", "updated_at", "user_id") VALUES('2010-04-01 16:59:58', 'Elad', '2010-04-01 16:59:58', NULL)[0m
+  [4;36;1mFeature Load (0.2ms)[0m   [0;1mSELECT * FROM "features" LIMIT 1[0m
+  [4;36;1mFeature Load (0.4ms)[0m   [0;1mSELECT * FROM "features" LIMIT 1[0m
+  [4;35;1mFeature Load (0.2ms)[0m   [0mSELECT * FROM "features" LIMIT 1[0m
+  [4;36;1mFeature Load (0.4ms)[0m   [0;1mSELECT * FROM "features" LIMIT 1[0m
+  [4;36;1mFeature Load (0.4ms)[0m   [0;1mSELECT * FROM "features" LIMIT 1[0m
+  [4;35;1mFeature Load (0.2ms)[0m   [0mSELECT * FROM "features" LIMIT 1[0m
+  [4;36;1mFeature Load (0.2ms)[0m   [0;1mSELECT * FROM "features" LIMIT 1[0m
+  [4;36;1mFeature Load (0.4ms)[0m   [0;1mSELECT * FROM "features" LIMIT 1[0m
+  [4;35;1mFeature Load (0.2ms)[0m   [0mSELECT * FROM "features" LIMIT 1[0m
+  [4;36;1mFeature Load (0.4ms)[0m   [0;1mSELECT * FROM "features" [0m
+
+
+Processing SessionsController#new (for 127.0.0.1 at 2010-04-01 13:39:13) [GET]
+  Parameters: {"action"=>"new", "controller"=>"sessions"}
+Rendering template within layouts/application
+Rendering sessions/new
+Rendered users/_user_bar (1.0ms)
+Completed in 21ms (View: 20, DB: 0) | 200 OK [http://localhost/]
+
+
+Processing UsersController#new (for 127.0.0.1 at 2010-04-01 13:39:15) [GET]
+  Parameters: {"action"=>"new", "controller"=>"users"}
+Rendering template within layouts/application
+Rendering users/new
+Rendered users/_user_bar (0.4ms)
+Completed in 16ms (View: 8, DB: 0) | 200 OK [http://localhost/users/new]
+
+
+Processing UsersController#create (for 127.0.0.1 at 2010-04-01 13:39:27) [POST]
+  Parameters: {"commit"=>"Sign up", "action"=>"create", "authenticity_token"=>"+JSxbvg+C8JfP04eGGBeg0i1BVCJARkb1YCSrKV6FQY=", "controller"=>"users", "user"=>{"password_confirmation"=>"[FILTERED]", "password"=>"[FILTERED]", "login"=>"eladmeidar", "email"=>"elad@eizesus.com"}}
+  [4;36;1mUser Load (0.1ms)[0m   [0;1mSELECT "users".id FROM "users" WHERE ("users"."login" = 'eladmeidar') LIMIT 1[0m
+  [4;35;1mUser Load (0.1ms)[0m   [0mSELECT "users".id FROM "users" WHERE ("users"."email" = 'elad@eizesus.com') LIMIT 1[0m
+  [4;36;1mUser Create (0.4ms)[0m   [0;1mINSERT INTO "users" ("salt", "name", "reset_token", "activated_at", "created_at", "crypted_password", "remember_token_expires_at", "updated_at", "activation_code", "remember_token", "login", "email") VALUES('92db05c5742bed4b7b2081abbf0ae3d243441988', '', NULL, NULL, '2010-04-01 17:39:27', 'f29597bebc1cf2a1f75d16603b7c9897a0d43623', NULL, '2010-04-01 17:39:27', 'cce4e66c4b8d09ffd305237ddef53be8ca4e84f5', NULL, 'eladmeidar', 'elad@eizesus.com')[0m
+Redirected to http://localhost:3000/users/1-eladmeidar/activation
+Completed in 102ms (DB: 1) | 302 Found [http://localhost/users]
+
+
+Processing UsersController#activation (for 127.0.0.1 at 2010-04-01 13:39:27) [GET]
+  Parameters: {"action"=>"activation", "id"=>"1-eladmeidar", "controller"=>"users"}
+  [4;35;1mUser Load (0.2ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 1) [0m
+Rendering template within layouts/application
+Rendering users/activation
+Rendered users/_user_bar (0.8ms)
+Completed in 15ms (View: 7, DB: 0) | 200 OK [http://localhost/users/1-eladmeidar/activation]
+  [4;36;1mUser Load (0.5ms)[0m   [0;1mSELECT * FROM "users" LIMIT 1[0m
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2010-04-01 13:40:14) [GET]
+
+ActionController::RoutingError (No route matches "/users/activate/cce4e66c4b8d09ffd305237ddef53be8ca4e84f5" with {:method=>:get}):
+  /Users/elad/.rvm/rubies/ruby-1.8.7-p249/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+  /Users/elad/.rvm/rubies/ruby-1.8.7-p249/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+  /Users/elad/.rvm/rubies/ruby-1.8.7-p249/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+  /Users/elad/.rvm/rubies/ruby-1.8.7-p249/lib/ruby/1.8/webrick/server.rb:162:in `start'
+  /Users/elad/.rvm/rubies/ruby-1.8.7-p249/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+  /Users/elad/.rvm/rubies/ruby-1.8.7-p249/lib/ruby/1.8/webrick/server.rb:95:in `start'
+  /Users/elad/.rvm/rubies/ruby-1.8.7-p249/lib/ruby/1.8/webrick/server.rb:92:in `each'
+  /Users/elad/.rvm/rubies/ruby-1.8.7-p249/lib/ruby/1.8/webrick/server.rb:92:in `start'
+  /Users/elad/.rvm/rubies/ruby-1.8.7-p249/lib/ruby/1.8/webrick/server.rb:23:in `start'
+  /Users/elad/.rvm/rubies/ruby-1.8.7-p249/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendering rescues/layout (not_found)
+
+
+Processing UsersController#activate (for 127.0.0.1 at 2010-04-01 13:41:06) [GET]
+  Parameters: {"action"=>"activate", "activation_code"=>"cce4e66c4b8d09ffd305237ddef53be8ca4e84f5", "controller"=>"users"}
+  [4;36;1mUser Load (0.2ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."activation_code" = 'cce4e66c4b8d09ffd305237ddef53be8ca4e84f5') LIMIT 1[0m
+  [4;35;1mUser Update (0.3ms)[0m   [0mUPDATE "users" SET "updated_at" = '2010-04-01 17:41:06', "activated_at" = '2010-04-01 17:41:06', "activation_code" = NULL WHERE "id" = 1[0m
+Redirected to http://localhost:3000/login
+Completed in 91ms (DB: 1) | 302 Found [http://localhost/activate/cce4e66c4b8d09ffd305237ddef53be8ca4e84f5]
+
+
+Processing SessionsController#new (for 127.0.0.1 at 2010-04-01 13:41:06) [GET]
+  Parameters: {"action"=>"new", "controller"=>"sessions"}
+Rendering template within layouts/application
+Rendering sessions/new
+Rendered users/_user_bar (0.4ms)
+Completed in 4ms (View: 3, DB: 0) | 200 OK [http://localhost/login]
+
+
+Processing SessionsController#create (for 127.0.0.1 at 2010-04-01 13:41:15) [POST]
+  Parameters: {"commit"=>"Log in", "action"=>"create", "authenticity_token"=>"+JSxbvg+C8JfP04eGGBeg0i1BVCJARkb1YCSrKV6FQY=", "controller"=>"sessions", "login"=>"eladmeidar", "password"=>"[FILTERED]"}
+  [4;36;1mUser Load (0.5ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."login" = 'eladmeidar' AND "users"."activation_code" IS NULL) LIMIT 1[0m
+Redirected to http://localhost:3000/dashboard
+Completed in 11ms (DB: 0) | 302 Found [http://localhost/session]
+
+
+Processing DashboardController#show (for 127.0.0.1 at 2010-04-01 13:41:16) [GET]
+  Parameters: {"action"=>"show", "controller"=>"dashboard"}
+  [4;35;1mUser Load (0.3ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 1) LIMIT 1[0m
+Rendering template within layouts/application
+Rendering dashboard/show
+Rendered users/_user_bar (2.0ms)
+Completed in 15ms (View: 6, DB: 0) | 200 OK [http://localhost/dashboard]
+
+
+Processing DashboardController#show (for 127.0.0.1 at 2010-04-01 13:42:03) [GET]
+  Parameters: {"action"=>"show", "controller"=>"dashboard"}
+  [4;36;1mUser Load (0.2ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 1) LIMIT 1[0m
+Rendering template within layouts/application
+Rendering dashboard/show
+Rendered users/_user_bar (0.6ms)
+Completed in 14ms (View: 6, DB: 0) | 200 OK [http://localhost/dashboard]
+
+
+Processing FeaturesController#index (for 127.0.0.1 at 2010-04-01 13:42:06) [GET]
+  Parameters: {"action"=>"index", "user_id"=>"1-eladmeidar", "controller"=>"features"}
+  [4;35;1mUser Load (0.2ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 1) LIMIT 1[0m
+Rendering template within layouts/application
+Rendering features/index
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSELECT count(*) AS count_all FROM "features" WHERE ("features".user_id = 1) [0m
+
+ActionView::TemplateError (undefined method `new_user_feature' for #<ActionView::Base:0x103360e80>) on line #5 of app/views/features/index.html.erb:
+2: 
+3: <% if @features.empty? %>
+4: 	<p>
+5: 		Now features yet, why don't you <%= link_to "Create one?", new_user_feature(current_user) %>
+6: 	</p>
+7: <% else %>
+8: 	<table>
+
+    app/views/features/index.html.erb:5
+    app/controllers/features_controller.rb:8:in `index'
+    /Users/elad/.rvm/rubies/ruby-1.8.7-p249/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+    /Users/elad/.rvm/rubies/ruby-1.8.7-p249/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+    /Users/elad/.rvm/rubies/ruby-1.8.7-p249/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+    /Users/elad/.rvm/rubies/ruby-1.8.7-p249/lib/ruby/1.8/webrick/server.rb:162:in `start'
+    /Users/elad/.rvm/rubies/ruby-1.8.7-p249/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+    /Users/elad/.rvm/rubies/ruby-1.8.7-p249/lib/ruby/1.8/webrick/server.rb:95:in `start'
+    /Users/elad/.rvm/rubies/ruby-1.8.7-p249/lib/ruby/1.8/webrick/server.rb:92:in `each'
+    /Users/elad/.rvm/rubies/ruby-1.8.7-p249/lib/ruby/1.8/webrick/server.rb:92:in `start'
+    /Users/elad/.rvm/rubies/ruby-1.8.7-p249/lib/ruby/1.8/webrick/server.rb:23:in `start'
+    /Users/elad/.rvm/rubies/ruby-1.8.7-p249/lib/ruby/1.8/webrick/server.rb:82:in `start'
+
+Rendered rescues/_trace (83.8ms)
+Rendered rescues/_request_and_response (0.9ms)
+Rendering rescues/layout (internal_server_error)
+
+
+Processing FeaturesController#index (for 127.0.0.1 at 2010-04-01 13:42:23) [GET]
+  Parameters: {"action"=>"index", "user_id"=>"1-eladmeidar", "controller"=>"features"}
+  [4;35;1mUser Load (0.2ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 1) LIMIT 1[0m
+Rendering template within layouts/application
+Rendering features/index
+  [4;36;1mSQL (0.2ms)[0m   [0;1mSELECT count(*) AS count_all FROM "features" WHERE ("features".user_id = 1) [0m
+Rendered users/_user_bar (0.5ms)
+Completed in 17ms (View: 7, DB: 0) | 200 OK [http://localhost/users/1-eladmeidar/features]
+
+
+Processing FeaturesController#new (for 127.0.0.1 at 2010-04-01 13:42:25) [GET]
+  Parameters: {"action"=>"new", "user_id"=>"1-eladmeidar", "controller"=>"features"}
+  [4;35;1mUser Load (0.2ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 1) LIMIT 1[0m
+Rendering template within layouts/application
+Rendering features/new
+Rendered features/_form (33.8ms)
+Rendered users/_user_bar (0.6ms)
+Completed in 53ms (View: 42, DB: 0) | 200 OK [http://localhost/users/1-eladmeidar/features/new]
+
+
+Processing FeaturesController#create (for 127.0.0.1 at 2010-04-01 13:42:33) [POST]
+  Parameters: {"feature"=>{"title"=>"Authentication"}, "commit"=>"Create", "action"=>"create", "authenticity_token"=>"+JSxbvg+C8JfP04eGGBeg0i1BVCJARkb1YCSrKV6FQY=", "user_id"=>"1-eladmeidar", "controller"=>"features"}
+  [4;36;1mUser Load (0.2ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 1) LIMIT 1[0m
+  [4;35;1mFeature Create (0.3ms)[0m   [0mINSERT INTO "features" ("created_at", "title", "updated_at", "user_id") VALUES('2010-04-01 17:42:33', 'Authentication', '2010-04-01 17:42:33', 1)[0m
+Redirected to http://localhost:3000/users/1-eladmeidar/features/2-authentication
+Completed in 61ms (DB: 0) | 302 Found [http://localhost/users/1-eladmeidar/features]
+
+
+Processing FeaturesController#show (for 127.0.0.1 at 2010-04-01 13:42:33) [GET]
+  Parameters: {"action"=>"show", "id"=>"2-authentication", "user_id"=>"1-eladmeidar", "controller"=>"features"}
+  [4;36;1mUser Load (0.2ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 1) LIMIT 1[0m
+  [4;35;1mFeature Load (0.2ms)[0m   [0mSELECT * FROM "features" WHERE ("features"."id" = 2 AND ("features".user_id = 1)) ORDER BY created_at[0m
+Rendering template within layouts/application
+Rendering features/show
+Rendered users/_user_bar (0.6ms)
+Completed in 18ms (View: 7, DB: 0) | 200 OK [http://localhost/users/1-eladmeidar/features/2-authentication]
+
+
+Processing FeaturesController#index to #<feature:0x103335668> (for 127.0.0.1 at 2010-04-01 13:42:41) [GET]
+  Parameters: {"format"=>"#<feature:0x103335668>", "action"=>"index", "user_id"=>"1-eladmeidar", "controller"=>"features"}
+  [4;36;1mUser Load (0.2ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 1) LIMIT 1[0m
+Completed in 10ms (View: 0, DB: 0) | 406 Not Acceptable [http://localhost/users/1-eladmeidar/features.%23%3Cfeature:0x103335668%3E]
+
+
+Processing FeaturesController#show (for 127.0.0.1 at 2010-04-01 13:43:00) [GET]
+  Parameters: {"action"=>"show", "id"=>"2-authentication", "user_id"=>"1-eladmeidar", "controller"=>"features"}
+  [4;35;1mUser Load (0.2ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 1) LIMIT 1[0m
+  [4;36;1mFeature Load (0.2ms)[0m   [0;1mSELECT * FROM "features" WHERE ("features"."id" = 2 AND ("features".user_id = 1)) ORDER BY created_at[0m
+Rendering template within layouts/application
+Rendering features/show
+Rendered users/_user_bar (44.1ms)
+Completed in 60ms (View: 50, DB: 0) | 200 OK [http://localhost/users/1-eladmeidar/features/2-authentication]
+
+
+Processing FeaturesController#show (for 127.0.0.1 at 2010-04-01 13:43:02) [GET]
+  Parameters: {"action"=>"show", "id"=>"2-authentication", "user_id"=>"1-eladmeidar", "controller"=>"features"}
+  [4;35;1mUser Load (0.2ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 1) LIMIT 1[0m
+  [4;36;1mFeature Load (0.2ms)[0m   [0;1mSELECT * FROM "features" WHERE ("features"."id" = 2 AND ("features".user_id = 1)) ORDER BY created_at[0m
+Rendering template within layouts/application
+Rendering features/show
+Rendered users/_user_bar (0.6ms)
+Completed in 15ms (View: 4, DB: 0) | 200 OK [http://localhost/users/1-eladmeidar/features/2-authentication]
+
+
+Processing FeaturesController#show (for 127.0.0.1 at 2010-04-01 13:43:12) [GET]
+  Parameters: {"action"=>"show", "id"=>"2-authentication", "user_id"=>"1-eladmeidar", "controller"=>"features"}
+  [4;35;1mUser Load (0.2ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 1) LIMIT 1[0m
+  [4;36;1mFeature Load (0.2ms)[0m   [0;1mSELECT * FROM "features" WHERE ("features"."id" = 2 AND ("features".user_id = 1)) ORDER BY created_at[0m
+Rendering template within layouts/application
+Rendering features/show
+Rendered users/_user_bar (0.6ms)
+Completed in 17ms (View: 6, DB: 0) | 200 OK [http://localhost/users/1-eladmeidar/features/2-authentication]
+
+
+Processing FeaturesController#index (for 127.0.0.1 at 2010-04-01 13:43:15) [GET]
+  Parameters: {"action"=>"index", "user_id"=>"1-eladmeidar", "controller"=>"features"}
+  [4;35;1mUser Load (0.2ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 1) LIMIT 1[0m
+Rendering template within layouts/application
+Rendering features/index
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSELECT count(*) AS count_all FROM "features" WHERE ("features".user_id = 1) [0m
+  [4;35;1mFeature Load (0.2ms)[0m   [0mSELECT * FROM "features" WHERE ("features".user_id = 1) ORDER BY created_at[0m
+Rendered users/_user_bar (0.5ms)
+Completed in 18ms (View: 8, DB: 1) | 200 OK [http://localhost/users/1-eladmeidar/features]
+
+
+Processing FeaturesController#edit (for 127.0.0.1 at 2010-04-01 13:43:18) [GET]
+  Parameters: {"action"=>"edit", "id"=>"2-authentication", "user_id"=>"1-eladmeidar", "controller"=>"features"}
+  [4;36;1mUser Load (0.2ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 1) LIMIT 1[0m
+  [4;35;1mFeature Load (0.2ms)[0m   [0mSELECT * FROM "features" WHERE ("features"."id" = 2 AND ("features".user_id = 1)) ORDER BY created_at[0m
+Rendering template within layouts/application
+Rendering features/edit
+Rendered features/_form (0.4ms)
+Rendered users/_user_bar (0.6ms)
+Completed in 19ms (View: 8, DB: 0) | 200 OK [http://localhost/users/1-eladmeidar/features/2-authentication/edit]
+
+
+Processing FeaturesController#update (for 127.0.0.1 at 2010-04-01 13:43:22) [PUT]
+  Parameters: {"feature"=>{"title"=>"Authentication2"}, "commit"=>"Save", "action"=>"update", "_method"=>"put", "authenticity_token"=>"+JSxbvg+C8JfP04eGGBeg0i1BVCJARkb1YCSrKV6FQY=", "id"=>"2-authentication", "user_id"=>"1-eladmeidar", "controller"=>"features"}
+  [4;36;1mUser Load (0.2ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 1) LIMIT 1[0m
+  [4;35;1mFeature Load (0.2ms)[0m   [0mSELECT * FROM "features" WHERE ("features"."id" = 2 AND ("features".user_id = 1)) ORDER BY created_at[0m
+  [4;36;1mFeature Update (0.2ms)[0m   [0;1mUPDATE "features" SET "updated_at" = '2010-04-01 17:43:22', "title" = 'Authentication2' WHERE "id" = 2[0m
+Redirected to http://localhost:3000/users/1-eladmeidar/features/2-authentication2
+Completed in 16ms (DB: 1) | 302 Found [http://localhost/users/1-eladmeidar/features/2-authentication]
+
+
+Processing FeaturesController#show (for 127.0.0.1 at 2010-04-01 13:43:22) [GET]
+  Parameters: {"action"=>"show", "id"=>"2-authentication2", "user_id"=>"1-eladmeidar", "controller"=>"features"}
+  [4;35;1mUser Load (0.2ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 1) LIMIT 1[0m
+  [4;36;1mFeature Load (0.2ms)[0m   [0;1mSELECT * FROM "features" WHERE ("features"."id" = 2 AND ("features".user_id = 1)) ORDER BY created_at[0m
+Rendering template within layouts/application
+Rendering features/show
+Rendered users/_user_bar (0.6ms)
+Completed in 14ms (View: 4, DB: 0) | 200 OK [http://localhost/users/1-eladmeidar/features/2-authentication2]
+
+
+Processing FeaturesController#index (for 127.0.0.1 at 2010-04-01 13:43:23) [GET]
+  Parameters: {"action"=>"index", "user_id"=>"1-eladmeidar", "controller"=>"features"}
+  [4;35;1mUser Load (0.2ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 1) LIMIT 1[0m
+Rendering template within layouts/application
+Rendering features/index
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSELECT count(*) AS count_all FROM "features" WHERE ("features".user_id = 1) [0m
+  [4;35;1mFeature Load (0.2ms)[0m   [0mSELECT * FROM "features" WHERE ("features".user_id = 1) ORDER BY created_at[0m
+Rendered users/_user_bar (0.5ms)
+Completed in 19ms (View: 8, DB: 1) | 200 OK [http://localhost/users/1-eladmeidar/features]

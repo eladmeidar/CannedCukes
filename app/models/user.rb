@@ -4,7 +4,8 @@ class User < ActiveRecord::Base
   include Authentication
   include Authentication::ByPassword
   include Authentication::ByCookieToken
-
+  include ToSlug
+  
   validates_presence_of     :login
   validates_length_of       :login,    :within => 3..40
   validates_uniqueness_of   :login
@@ -24,6 +25,7 @@ class User < ActiveRecord::Base
   # anything else you want your user to change should be added here.
   attr_accessible :login, :email, :name, :password, :password_confirmation
 
+  has_many :features, :order => 'created_at'
 
   # Activates the user in the database.
   def activate!
@@ -84,6 +86,10 @@ class User < ActiveRecord::Base
       password_confirmation = confirmation
       save      
     end
+  end
+  
+  def to_param
+    "#{id}-#{sluggify(login)}"
   end
   
   protected

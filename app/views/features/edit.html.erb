@@ -1,2 +1,9 @@
-<h1>Features#edit</h1>
-<p>Find me in app/views/features/edit.html.erb</p>
+<% title "Edit a Feature" %>
+
+<% form_for [@user, @feature] do |f| %>
+<%= error_messages_for :feature %>
+<ol>
+	<%= render :partial => 'form', :locals => {:f => f}%>
+	<li><%= f.submit 'Save'%></li>
+</ol>	
+<% end %>

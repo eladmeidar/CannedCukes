@@ -1,2 +1,34 @@
-<h1>Features#index</h1>
-<p>Find me in app/views/features/index.html.erb</p>
+<% title "My Features"%>
+
+<% if @features.empty? %>
+	<p>
+		Now features yet, why don't you <%= link_to "Create one?", new_user_feature_url(current_user) %>
+	</p>
+<% else %>
+	<table>
+		<thead>
+			<tr>
+				<th>Title</th>
+				<th>Scenarios</th>
+				<th>Created at</th>
+				<th>Updated at</th>
+				<th>Actions</th>
+			</tr>
+		</thead>
+		<tbody>
+			<% @features.each do |feature| %>
+				<tr>	
+					<td><%= feature.title %></td>
+					<td><%= feature.scenarios.size %></td>
+					<td><%= feature.created_at.to_s(:short)%></td>
+					<td><%= feature.updated_at.to_s(:short)%></td>
+					<td>
+							<%= link_to "Show", user_feature_url(current_user, feature)%> |
+							<%= link_to "Edit", edit_user_feature_url(current_user, feature)%> |
+							<%= link_to "Destroy", user_feature_url(current_user, feature), :method => :delete %>
+					</td>
+				</tr>
+			<% end %>
+		</tbody>
+	</table>
+<% end %>
