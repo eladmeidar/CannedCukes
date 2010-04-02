@@ -1,0 +1,9 @@
+<% title "Edit a Scenario"%>
+
+<% form_for [current_user, @feature, @scenario] do |f| %>
+<%= error_messages_for :scenario %>
+<ol>
+	<%= render :partial => 'form', :locals => {:f => f}%>
+	<li><%= f.submit 'Save'%></li>
+</ol>
+<% end %>

@@ -47,6 +47,11 @@ module NavigationHelpers
     when /new scenario page/
       user = User.first
       new_user_feature_scenario_path(user, user.features.first)
+    
+    when /my "([^\"]*)" feature page/
+      user = User.first
+      user_feature_url(user, user.features.find(:first, :conditions => {:title => $1}))
+      
     # Add more mappings here.
     # Here is an example that pulls values out of the Regexp:
     #

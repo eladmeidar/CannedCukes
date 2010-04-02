@@ -1,6 +1,6 @@
 class ScenariosController < ApplicationController
   before_filter :login_required
-  before_filter :assign_feature, :only => [:show, :destroy, :edit, :new]
+  before_filter :assign_feature
   
   def index
     # TODO: will_paginate
@@ -32,7 +32,7 @@ class ScenariosController < ApplicationController
         page.xml { render :xml => @scenario.errors, :status => :unprocessable_entity }
       end
     else
-      flash[:notice] = "Scenario created successfully"
+      flash[:notice] = "Scenario successfully created."
       respond_to do |page|
         page.html { redirect_to user_feature_scenario_url(current_user, @feature, @scenario)}
         page.json { render :json => @scenario }
@@ -49,6 +49,38 @@ class ScenariosController < ApplicationController
       page.txt
       page.json { render :json => @scenario.to_json}
       page.xml { render :json => @scenario.to_xml} 
+    end
+  end
+  
+  def edit
+    @scenario = @feature.scenarios.find(params[:id])
+    if @scenario.blank?
+      flash[:error] = "Oops! couldn't find the scenario you are looking for."
+      redirect_to user_features_url(current_user)
+    else
+      respond_to do |page|
+        page.html
+        page.json { render :nothing => true, :status => 204 }
+        page.xml { render :nothing => true, :status => 204 }
+      end
+    end
+  end
+
+  def update
+    @scenario = @feature.scenarios.find(params[:id])
+    if @scenario.blank? || !(@scenario.update_attributes(params[:scenario]))
+      respond_to do |page|
+        page.html { render :action => 'edit'}
+        page.json { render :json => @scenario.errors, :status => :unprocessable_entity }
+        page.xml { render :xml => @scenario.errors, :status => :unprocessable_entity }
+      end
+    else
+      flash[:notice] = "Scenario updated successfully"
+      respond_to do |page|
+        page.html { redirect_to user_feature_scenario_url(current_user, @feature, @scenario)}
+        page.json { render :json => @scenario }
+        page.xml { render :xml => @scenario }
+      end
     end
   end
   
