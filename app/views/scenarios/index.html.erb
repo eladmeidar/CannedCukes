@@ -14,7 +14,7 @@
 <div class="scenario">
 	<h3><%= scenario.title %></h3>
 	<pre class="brush: cuke"><%= h scenario.body %></pre>
-	<%= link_to 'Download', user_feature_scenario_url(current_user, scenario.feature, scenario, :format => 'txt')%>
+	<%= link_to 'Download', user_feature_scenario_url(current_user, scenario.feature, scenario, :format => 'txt') if scenario.feature.present? %>
 </div>
 <% end  %>
 <% end %>
