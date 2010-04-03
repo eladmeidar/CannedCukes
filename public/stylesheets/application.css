@@ -11,10 +11,47 @@ a {
   color: #0000FF;
 }
 
+form {
+	font-size:1.1em;
+	margin-bottom:10px;
+	padding-bottom:10px;
+}
+
+fieldset {
+	background:#9F6;
+	border:1px solid #393;
+
+}
+
+fieldset legend {
+	border:1px solid #393;
+	color:white;
+	background:#393;
+	padding:10px;
+}
+
+fieldset ol {
+	list-style:none;
+	padding:5px;
+	line-height:1.5em;
+}
+
+fieldset li {
+	
+}
+
+fieldset li label {
+	display:block;
+}
 table {
 	border-collapse: collapse;
 	border:0;
 	width:100%;
+}
+
+fieldset input[type=text], fieldset textarea {
+	border:2px solid #090;
+	padding:5px;
 }
 
 table thead {
@@ -143,7 +180,7 @@ border-right: 1px solid #fff;
 
 .scenario {
 	border:2px solid #393;
-	margin-bottom:10px;
+	margin-top:20px;
 	padding:0px;
 	padding-bottom:15px;
 }

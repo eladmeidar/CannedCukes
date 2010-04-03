@@ -1,9 +1,11 @@
 <% title "New Scenario"%>
 
 <% form_for [current_user, @feature, @scenario] do |f| %>
+<fieldset>
 <%= error_messages_for :scenario %>
 <ol>
 	<%= render :partial => 'form', :locals => {:f => f}%>
 	<li><%= f.submit 'Create'%></li>
 </ol>
+</fieldset>
 <% end %>

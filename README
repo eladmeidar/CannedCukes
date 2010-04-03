@@ -1,0 +1,13 @@
+h1. Canned Cukes
+
+CannedCukes is a simple application, designed to keep track of "Cucumber":http://cuke.org features and scenarios.
+CannedCukes allows users to save their features and search through other users features, maybe to find a better story/feature specs.
+
+
+still to come:
+
+* A way to *fork* a feature/scenario from another person, keeping it completely yours
+* A gem to ease submission of features directly from an application root.
+* for god sake a better CSS.
+
+Patches are welcome, so as fellow committers.
