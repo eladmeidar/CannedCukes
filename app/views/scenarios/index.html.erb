@@ -9,10 +9,12 @@
 <% end -%>
 </fieldset>
 
+<% if @scenarios.any? %>
 <% @scenarios.each do |scenario| %>
 <div class="scenario">
 	<h3><%= scenario.title %></h3>
 	<pre class="brush: cuke"><%= h scenario.body %></pre>
 	<%= link_to 'Download', user_feature_scenario_url(current_user, scenario.feature, scenario, :format => 'txt')%>
 </div>
-<% end if @scenarios.any?%>
+<% end  %>
+<% end %>
