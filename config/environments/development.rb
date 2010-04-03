@@ -18,6 +18,3 @@ config.action_mailer.raise_delivery_errors = false
 config.action_mailer.default_url_options = {:host => "example.com"}
 
 config.gem 'restful_authentication'
-config.gem 'restful_authentication'
-config.gem 'will_paginate'
-config.gem 'searchlogic'
