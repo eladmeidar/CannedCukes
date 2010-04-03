@@ -203,3 +203,7 @@ border-right: 1px solid #fff;
 .scenario a {
 	margin-left:15px;	
 }
+
+.syntaxhighlighter .lines {
+	margin-left:15px;
+}

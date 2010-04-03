@@ -3,8 +3,14 @@
 <html>
   <head>
     <title><%= h(yield(:title) || "Untitled") %></title>
-    <%= stylesheet_link_tag 'application' %>
+		<%= javascript_include_tag 'shCore', 'shCucumber'%>
+    <%= stylesheet_link_tag 'shCore', 'shThemeDefault', 'application' %>
     <%= yield(:head) %>
+		<script type="text/javascript">
+			SyntaxHighlighter.defaults['gutter'] = false;
+			SyntaxHighlighter.defaults['wrap-lines'] = false;
+			SyntaxHighlighter.all();
+		</script>
   </head>
   <body>
 		<%= render :partial => 'users/user_bar'%>
@@ -20,4 +26,5 @@
       <%= yield %>
     </div>
   </body>
+
 </html>
