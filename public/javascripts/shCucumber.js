@@ -1,8 +1,8 @@
 SyntaxHighlighter.brushes.Cucumber = function()
 {
-	var funcs		= '';
+	var funcs		= 'pizikabubu asdccdsdvvvf';
 	var keywords	= 'Feature Scenario I And Then When Given';
-	var operators	= '';
+	var operators	= 'asdcdcxzfddf maks ksmd asd dasaddasd';
 
 	this.regexList = [
 		{ regex: /--(.*)$/gm,												css: 'comments' },
