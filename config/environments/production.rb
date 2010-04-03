@@ -25,5 +25,7 @@ config.action_view.cache_template_loading            = true
 # config.action_mailer.raise_delivery_errors = false
 config.action_mailer.default_url_options = {:host => "cannedcukes.heroku.com"}
 
+config.gem 'will_paginate'
+config.gem 'searchlogic'
 # Enable threaded mode
 # config.threadsafe!

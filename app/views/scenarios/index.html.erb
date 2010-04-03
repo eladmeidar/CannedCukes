@@ -10,7 +10,7 @@
 <div class="scenario">
 	<h3><%= scenario.title %></h3>
 	<pre>
-		<%= scenario.body%>
+		<%= h scenario.body%>
 	</pre>
 	<%= link_to 'Download', user_feature_scenario_url(current_user, scenario.feature, scenario, :format => 'txt')%>
 </div>
