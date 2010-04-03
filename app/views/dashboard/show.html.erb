@@ -1,3 +1,7 @@
 <% title 'Dashboard'%>
 
+<p>
+	Hi! <%= current_user.login %>,
+</p>
+
 <%= link_to 'My Features', user_features_url(current_user)%>
