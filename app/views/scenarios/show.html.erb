@@ -3,5 +3,7 @@
 	<dt>Feature</dt>
 	<dd><%= @scenario.feature.title %></dd>
 	<dt>body</dt>
-	<dd><%= @scenario.body %></dd>
+	<dd><%= simple_format(@scenario.body) %></dd>
 </dl>
+
+<%= link_to 'Go back to feature page', user_feature_url(current_user, @feature)%>

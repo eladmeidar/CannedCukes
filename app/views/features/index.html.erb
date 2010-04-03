@@ -23,6 +23,7 @@
 					<td><%= feature.created_at.to_s(:short)%></td>
 					<td><%= feature.updated_at.to_s(:short)%></td>
 					<td>
+							<%= link_to "Download", user_feature_url(current_user, feature, :format => :txt)%> |
 							<%= link_to "Show", user_feature_url(current_user, feature)%> |
 							<%= link_to "Edit", edit_user_feature_url(current_user, feature)%> |
 							<%= link_to "Destroy", user_feature_url(current_user, feature), :method => :delete %>
@@ -32,3 +33,4 @@
 		</tbody>
 	</table>
 <% end %>
+<%= link_to 'Add a New Feature',  new_user_feature_url(current_user)%>

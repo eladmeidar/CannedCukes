@@ -1,2 +1,29 @@
 <% title "Feature: #{@feature.title}"%>
-<%= link_to 'View all my Features', user_features_url(current_user)%>
+
+<% if @feature.scenarios.empty? %>
+	<p>
+		You don't have any scenarios set for this feature. <%= link_to "Add your own", new_user_feature_scenario_url(current_user, @feature) %> or <%= link_to 'Search', scenarios_url %>.
+	</p>
+<% else %>
+	<table>
+		<thead>
+			<tr>
+				<th>Title</th>
+				<th>Actions</th>
+			</tr>
+		</thead>
+		<tbody>
+			<% @feature.scenarios.each do |scenario| %>
+				<tr>
+					<td><%= scenario.title %></td>
+					<td>
+					<%= link_to 'Show', user_feature_scenario_url(current_user, @feature, scenario) %> |
+							<%= link_to 'Edit', edit_user_feature_scenario_url(current_user, @feature, scenario) %> |
+							<%= link_to 'Destroy', user_feature_scenario_url(current_user, @feature, scenario), :method => :delete, :confirm => 'Are you sure?'%>
+					</td>
+				</tr>
+			<% end %>
+		</tbody>
+	</table>
+<% end %>
+<%= link_to 'Add a new Scenario', new_user_feature_scenario_url(current_user, @feature) %> or <%= link_to 'View all Features', user_features_url(current_user)%>

@@ -1,0 +1,17 @@
+<% title 'Scenarios'%>
+<% form_tag scenarios_url, :method => :get do |f|%>
+	<ol>
+		<li><label for="q">Search</label><input type="text" name="q" id="q"></li>
+		<li><input type="submit" value="Submit"/></li>
+	</ol>
+<% end -%>
+
+<% @scenarios.each do |scenario| %>
+<div class="scenario">
+	<h3><%= scenario.title %></h3>
+	<pre>
+		<%= simple_format(scenario.body)%>
+	</pre>
+	<%= link_to 'Download', user_feature_scenario_url(current_user, scenario.feature, scenario, :format => 'txt')%>
+</div>
+<% end if @scenarios.any?%>

@@ -4,7 +4,12 @@ class ScenariosController < ApplicationController
   
   def index
     # TODO: will_paginate
-    @scenarios = Scenario.all
+    
+    if params[:q].present?
+      @scenarios = Scenario.body_like(params[:q]).paginate(:page => params[:page] || 1, :per_page => 30)
+    else
+      @scenarios = Scenario.all.paginate(:page => params[:page] || 1, :per_page => 30)
+    end
     
     respond_to do |page|
       page.html
