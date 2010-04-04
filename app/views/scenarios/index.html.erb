@@ -1,13 +1,11 @@
 <% title 'Scenarios'%>
 <% form_tag scenarios_url, :method => :get do |f|%>
-<fieldset>
-	<legend>Search for scenarios</legend>
-	<ol>
-		<li><label for="q">Search</label><input type="text" name="q" id="q" value="<%= params[:q] %>"></li>
-		<li><input type="submit" value="Submit"/></li>
-	</ol>
+	<dl>
+		<dt><label for="q">Search</label></dt>
+		<dd><input type="text" name="q" id="q" value="<%= params[:q] %>"/><input type="submit" value="Submit"/></dd>
+	</dl>
+	<div class="clear"></div>
 <% end -%>
-</fieldset>
 
 <% if @scenarios.any? %>
 <% @scenarios.each do |scenario| %>

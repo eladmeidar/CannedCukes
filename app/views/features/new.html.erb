@@ -1,11 +1,12 @@
 <% title "Create a new Feature" %>
 
 <% form_for [@user, @feature] do |f| %>
-<fieldset>
 <%= error_messages_for :feature %>
-<ol>
+<dl>
 	<%= render :partial => 'form', :locals => {:f => f}%>
-	<li><%= f.submit 'Create'%></li>
-</ol>	
-</fieldset>
+	
+	<dt></dt>
+	<dd><%= f.submit 'Create'%></dd>
+</dl>
+<div class="clear"></div>	
 <% end %>

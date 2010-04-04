@@ -3,7 +3,7 @@
 	<dt>Feature</dt>
 	<dd><%= @scenario.feature.title %></dd>
 	<dt>body</dt>
-	<dd><pre class="brush: cuke"><%= simple_format h(@scenario.body) %></pre></dd>
+	<dd><pre class="brush: cuke"><%= h(@scenario.body) %></pre></dd>
 </dl>
 
 <%= link_to 'Go back to feature page', user_feature_url(current_user, @feature)%>

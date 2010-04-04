@@ -31,5 +31,5 @@ Feature: Manage scenarios
 		When I edit the "Authentication" feature 1st scenario
 		And I fill in "Title" with "Logging in using the power of mind"
     And I press "Save"
-		Then I should see "Scenario updated successfully"
+		Then I should see "Scenario UPDATED successfully"
 		And I should see "Logging in using the power of mind"

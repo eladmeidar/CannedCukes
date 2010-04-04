@@ -2,7 +2,7 @@
   "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html>
   <head>
-    <title><%= h(yield(:title) || "Untitled") %></title>
+    <title>CannedCukes - <%= h(yield(:title) || "Share your Features") %></title>
 		<%= javascript_include_tag 'shCore', 'shCucumber'%>
     <%= stylesheet_link_tag 'shCore', 'shThemeDefault', 'application' %>
     <%= yield(:head) %>
@@ -25,6 +25,9 @@
       
       <%= yield %>
     </div>
+		<div id="footer">
+			CannedCukes was created by <a href="http://blog.eizesus.com">Elad Meidar</a> and the <a href="http://railsbridge.org">RailsBridge</a> Community. Wanna help? <a href="http://github.com/eladmeidar/CannedCukes">Fork and join us!</a>
+		</div>
   </body>
 
 </html>

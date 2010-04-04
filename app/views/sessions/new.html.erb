@@ -1,14 +1,27 @@
-<h1>Log In</h1>
+<% title "Awesome Feature Hosting"%>
+<h2>Sharing your features, making a better testing community</h2>
+<p id="pitch">
+	Hi There!,<br/>
+	CannedCukes is all about one thing: <strong>helping people make better BDD tests</strong>. CannedCukes is a place where BDD testers from across the world can upload <%= link_to "Cucumber", "http://cukes.info" %> features and scenarios and share them with other testers.
+</p>
+<p>
+	By sharing your features and using other testers features and scenarios:
+</p>
+<ul>
+	<li>Help others make better test case and maybe tackle problems that they missed.</li>
+	<li>earn a simple and easy place to host your own features in case you want to use them in another application you'll develop later.</li>
+</ul>
 
 <% form_tag session_path do -%>
-<p><%= label_tag 'login' %><br />
-<%= text_field_tag 'login', @login %></p>
-
-<p><%= label_tag 'password' %><br/>
-<%= password_field_tag 'password', nil %> <%= link_to "Can't remember?", forgot_password_url %></p>
-
-<p><%= label_tag 'remember_me', 'Remember me' %>
-<%= check_box_tag 'remember_me', '1', @remember_me %></p>
-
-<p><%= submit_tag 'Log in' %> or <%= link_to 'Sign up', new_user_url %></p>
+<dl>
+	<dt><%= label_tag 'login' %></dt>
+	<dd><%= text_field_tag 'login', @login %></dd>
+	<dt><%= label_tag 'password' %></dt>
+	<dd><%= password_field_tag 'password', nil %> <%= link_to "Forgot?", forgot_password_url %></dd>
+	<dt><%= label_tag 'remember_me', 'Remember me' %></dt>
+	<dd><%= check_box_tag 'remember_me', '1', @remember_me %></dd>
+	<dt></dt>
+	<dd><%= submit_tag 'Log in' %> or <%= link_to 'Sign up', new_user_url %></dd>
+</dl>
+<div class="clear"></div>
 <% end -%>

@@ -1,6 +1,9 @@
 body {
   font-family: Verdana, Helvetica, Arial;
   font-size: 14px;
+  background:#6C6;
+  padding:0px;
+  margin:0px;
 }
 
 a img {
@@ -17,39 +20,65 @@ form {
 	padding-bottom:10px;
 }
 
-fieldset {
-	background:#9F6;
-	border:1px solid #393;
-
+h1 {
+	color:#063;
+	font-size:3.1em;
+	padding:0px;
+	margin:0px;
 }
 
-fieldset legend {
-	border:1px solid #393;
-	color:white;
-	background:#393;
-	padding:10px;
+fieldset#login {
+	background: white;
+	border:9px double #093;
+	margin:0px auto;
+	width:500px;
 }
 
-fieldset ol {
-	list-style:none;
+input[type="text"], input[type="password"], textarea {
+	border:1px solid #093;
 	padding:5px;
-	line-height:1.5em;
+	font-size:1.2em;
 }
 
-fieldset li {
-	
+dl
+{
+	float: left;
+	width: 720px;
+	margin: 1em 0;
+	padding: 0;
+	background:#9F9;
+	border:1px solid #696;
 }
 
-fieldset li label {
-	display:block;
+
+
+dl dt
+{
+	clear: left;
+	float: left;
+	width: 200px;
+	margin: 0;
+	padding: 5px;
+	padding:15px;
+	text-align:right;
+	font-weight: bold;
 }
+
+dl dd
+{
+	float: left;
+	width: 300px;
+	margin: 0;
+	padding:15px;
+}
+
 table {
 	border-collapse: collapse;
 	border:0;
 	width:100%;
 }
 
-fieldset input[type=text], fieldset textarea {
+fieldset input[type=text], fieldset input[type=password], fieldset textarea {
 	border:2px solid #090;
 	padding:5px;
 }
@@ -62,6 +91,9 @@ table thead tr {
 	
 }
 
+a:link, a:visited {
+	color:#063;
+}
 table thead tr th {
 	color:#096;
 	text-align:left;
@@ -78,6 +110,16 @@ table tbody tr td {
 	padding-left:0px;
 	border-bottom:1px solid #6C6;
 }
+
+p#pitch{
+	font-size:1.3em;
+	padding:10px;
+	padding-left:30px;
+	padding-right:30px;
+	background:#CF9;
+	margin-left:30px;
+	margin-right:30px;
+}
 .clear {
   clear: both;
   height: 0;
@@ -88,8 +130,19 @@ table tbody tr td {
   width: 75%;
   margin: 0 auto;
   background-color: #FFF;
-  padding: 20px 40px;
+  border:8px solid #396;
+/* padding: 20px 40px; */
+	-moz-box-shadow: 9px 8px 10px #555;
+padding: 5px 5px 5px 15px;
+  
   margin-top: 20px;
+}
+
+#footer {
+width: 75%;
+margin: 0 auto;
+text-align:center;
+margin-top:30px;
 }
 
 #flash_notice, #flash_error {
@@ -147,9 +200,22 @@ table tbody tr td {
 
 
 #navcontainer {
-	padding:0px;
+	background:#9F9 url(../images/logo.png) 10px 10px no-repeat;
 	margin:0px;
-	text-align:right;
+	padding:30px;
+	border-bottom:3px solid #396;
+	
+}
+
+#navcontainer h1 {
+	padding:0px;
+	float:left;
+	margin:0px;
+	margin-left: 110px;
+}
+
+#navcontainer h1 a {
+	text-decoration:none;
 }
 #navcontainer ul
 {
@@ -157,16 +223,10 @@ padding-left: 0;
 margin-left: 0;
 margin:0px;
 color: black;
-width: 100%;
-font-family: arial, helvetica, sans-serif;
 text-align:right;
 }
 
 #navcontainer ul li { display: inline;}
-
-#navcontainer ul li:after {
-	content: "|";
-}
 
 #navcontainer ul li strong {
 	padding: 0.2em 0.5em;
@@ -175,7 +235,10 @@ text-align:right;
 #navcontainer ul li a
 {
 padding: 0.2em 1em;
-border-right: 1px solid #fff;
+font-size:1.5em;
+text-decoration:none;
+background:#396;
+color:white;
 }
 
 .scenario {

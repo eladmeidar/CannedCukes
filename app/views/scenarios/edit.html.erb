@@ -2,8 +2,10 @@
 
 <% form_for [current_user, @feature, @scenario] do |f| %>
 <%= error_messages_for :scenario %>
-<ol>
+<dl>
 	<%= render :partial => 'form', :locals => {:f => f}%>
-	<li><%= f.submit 'Save'%></li>
-</ol>
+	<dt></dt>
+	<dd><%= f.submit 'Save'%></dd>
+</dl>
+<div class="clear"></div>
 <% end %>

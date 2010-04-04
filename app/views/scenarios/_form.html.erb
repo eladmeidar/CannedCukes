@@ -1,3 +1,5 @@
-<li><%= f.label :title%><%= f.text_field :title %></li>
-<li><%= f.label :feature_id %><%= f.select :feature_id, current_user.features_for_select %></li>
-<li><%= f.label :body %><%= f.text_area :body %></li>
+<dt><%= f.label :title%></dt>
+<dd><%= f.text_field :title %></dd>
+<dt><%= f.label :feature_id %></dt>
+<dd><%= f.select :feature_id, current_user.features_for_select %></dd>
+<dt><%= f.label :body %></dt><dd><%= f.text_area :body %></dd>

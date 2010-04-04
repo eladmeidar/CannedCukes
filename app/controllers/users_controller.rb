@@ -42,12 +42,17 @@ class UsersController < ApplicationController
     end
   end
   
+  def show
+  end
+  
   def reset_password
     if params[:code].present?
       unless @user = User.find(:first, :conditions => {:reset_token => params[:code]})
         flash[:error] = "Could not find a user with that passowrd reset token, Please follow the URL from your email."
         redirect_to root_url
       end
+    elsif logged_in?
+      @user = current_user
     else
       flash[:error] = "Could not find a user with that passowrd reset token, Please follow the URL from your email."
       redirect_to root_url
