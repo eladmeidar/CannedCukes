@@ -2,17 +2,21 @@
 
 <% form_for :user, :url => users_path do |f| -%>
 <%= f.error_messages %>
-<p><%= f.label :login %><br/>
-<%= f.text_field :login %></p>
+<dl>
+<dt><%= f.label :login %></dt>
+<dd><%= f.text_field :login %></dd>
 
-<p><%= f.label :email %><br/>
-<%= f.text_field :email %></p>
+<dt><%= f.label :email %></dt>
+<dd><%= f.text_field :email %></dd>
 
-<p><%= f.label :password %><br/>
-<%= f.password_field :password %></p>
+<dt><%= f.label :password %></dt>
+<dd><%= f.password_field :password %></dd>
 
-<p><%= f.label :password_confirmation, 'Confirm Password' %><br/>
-<%= f.password_field :password_confirmation %></p>
+<dt><%= f.label :password_confirmation, 'Confirm Password' %></dt>
+<dd><%= f.password_field :password_confirmation %></dd>
 
-<p><%= f.submit 'Sign up' %></p>
+<dt></dt>
+<dd><%= f.submit 'Sign up' %></dd>
+</dl>
+<div class="clear"></div>
 <% end -%>
