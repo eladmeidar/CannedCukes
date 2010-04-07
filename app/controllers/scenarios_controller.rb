@@ -14,7 +14,7 @@ class ScenariosController < ApplicationController
     respond_to do |page|
       page.html
       page.json { render :json => @scenarios }
-      page.xml { render :xml => @scenarios }
+      page.xml { }
     end
   end
   
