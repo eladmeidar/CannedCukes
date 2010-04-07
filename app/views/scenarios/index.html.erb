@@ -1,4 +1,4 @@
-<% title 'Scenarios'%>
+<% title 'Search Scenarios'%>
 <% form_tag scenarios_url, :method => :get do |f|%>
 	<dl>
 		<dt><label for="q">Search</label></dt>
@@ -8,11 +8,17 @@
 <% end -%>
 
 <% if @scenarios.any? %>
+<%= will_paginate @scenarios %>
 <% @scenarios.each do |scenario| %>
 <div class="scenario">
-	<h3><%= scenario.title %></h3>
+	<h3><%= link_to scenario.feature.user.login, user_url(scenario.feature.user)%> / <%= scenario.title %></h3>
+	<em>From feature: <%= link_to scenario.feature.title, user_feature_url(scenario.feature.user, scenario.feature) %></em>
 	<pre class="brush: cuke"><%= h scenario.body %></pre>
-	<%= link_to 'Download', user_feature_scenario_url(current_user, scenario.feature, scenario, :format => 'txt') if scenario.feature.present? %>
+	<div class="links">
+		<%= link_to 'Download Scenario', user_feature_scenario_url(scenario.feature.user, scenario.feature, scenario, :format => 'txt') if scenario.feature.present? %> |
+		<%= link_to 'Download Full Feature', user_feature_url(scenario.feature.user, scenario.feature, :format => 'txt') if scenario.feature.present? %>
+	</div>
 </div>
 <% end  %>
+<%= will_paginate @scenarios %>
 <% end %>

@@ -1,6 +1,7 @@
 class FeaturesController < ApplicationController
 
-	before_filter :login_required, :assign_user
+	before_filter :login_required, :except => [:show]
+	before_filter :assign_user
 	
   def index
     @features = current_user.features
@@ -23,7 +24,7 @@ class FeaturesController < ApplicationController
   end
 
   def show
-    @feature = current_user.features.find(params[:feature_id] || params[:id])
+    @feature = @user.features.find(params[:feature_id] || params[:id])
     
     respond_to do |page|
       page.html
@@ -107,6 +108,10 @@ class FeaturesController < ApplicationController
   protected
   
   def assign_user
-    @user = current_user
+    if logged_in?
+      @user = current_user
+    else
+      @user = Feature.find(params[:id]).user
+    end
   end
 end

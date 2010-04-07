@@ -31,5 +31,20 @@ Feature: Manage scenarios
 		When I edit the "Authentication" feature 1st scenario
 		And I fill in "Title" with "Logging in using the power of mind"
     And I press "Save"
-		Then I should see "Scenario UPDATED successfully"
+		Then I should see "Scenario updated successfully"
 		And I should see "Logging in using the power of mind"
+		
+	Scenario: Search without being logged in
+		Given I am not logged in
+		And the following features:
+		| title          |
+		| Authentication |
+		| Registration   |
+		| Awesomeness    |
+		And the following scenarios for the "Authentication" feature:
+		 | title                     | body                                                    |
+		 | Logging in with telepathy | Given i am david coperfield And i focus i should log in |
+		And I am on the home page
+		And I follow "Search Scenarios"
+		And I fill in "q" with "telepathy"
+		Then I should see "Logging in with telepathy"

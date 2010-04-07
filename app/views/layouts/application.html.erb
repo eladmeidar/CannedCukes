@@ -1,7 +1,8 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
   "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
-<html>
+<html xmlns="http://www.w3.org/1999/xhtml">
   <head>
+		<meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
     <title>CannedCukes - <%= h(yield(:title) || "Share your Features") %></title>
 		<%= javascript_include_tag 'shCore', 'shCucumber'%>
     <%= stylesheet_link_tag 'shCore', 'shThemeDefault', 'application' %>
@@ -26,8 +27,34 @@
       <%= yield %>
     </div>
 		<div id="footer">
-			CannedCukes was created by <a href="http://blog.eizesus.com">Elad Meidar</a> and the <a href="http://railsbridge.org">RailsBridge</a> Community. Wanna help? <a href="http://github.com/eladmeidar/CannedCukes">Fork and join us!</a>
+			<p>
+			CannedCukes was created by <a href="http://blog.eizesus.com">Elad Meidar</a> and the <a href="http://railsbridge.org">RailsBridge</a> Community. Logo and name by Confounds.
+			</p>
+			<p>
+				Wanna help? <a href="http://github.com/eladmeidar/CannedCukes">Fork and join us!</a>
+			</p>
 		</div>
+		<script type="text/javascript">
+		  var uservoiceOptions = {
+		    key: 'cannedcukes',
+		    host: 'cannedcukes.uservoice.com', 
+		    forum: '49901',
+		    alignment: 'left',
+		    background_color:'#f00', 
+		    text_color: 'white',
+		    hover_color: '#06c',
+		    lang: 'en',
+		    showTab: true
+		  };
+		  function _loadUserVoice() {
+		    var s = document.createElement('script');
+		    s.src = ("https:" == document.location.protocol ? "https://" : "http://") + "uservoice.com/javascripts/widgets/tab.js";
+		    document.getElementsByTagName('head')[0].appendChild(s);
+		  }
+		  _loadSuper = window.onload;
+		  window.onload = (typeof window.onload != 'function') ? _loadUserVoice : function() { _loadSuper(); _loadUserVoice(); };
+		</script>
+	
   </body>
 
 </html>

@@ -5,13 +5,12 @@
 <h1><a href="/">CannedCukes</a></h1>
 <% end %>
 <ul id="navlist">
+	<li><%= link_to "Search Scenarios", scenarios_url%></li>
 <% if logged_in? -%>
 	<li><%= link_to "My Features", user_features_url(current_user )%></li>
-	<li><%= link_to "Search Scenarios", scenarios_url%></li>
 	<li><%= link_to "My Account", user_url(current_user) %></li>
 	<li id="logout"><%= link_to "Log out", logout_path, { :title => "Log out" } %></li>
 <% else -%>
-  <li><%= link_to_login_with_IP 'Not logged in', :style => 'border: none;' %></li>
   <li><%= link_to "Log in",  login_path,  { :title => "Log in" } %></li>
   <li><%= link_to "Sign up", signup_path, { :title => "Create an account" } %></li>
 <% end -%>

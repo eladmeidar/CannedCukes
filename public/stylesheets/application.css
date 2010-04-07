@@ -200,7 +200,7 @@ margin-top:30px;
 
 
 #navcontainer {
-	background:#9F9 url(../images/logo.png) 10px 10px no-repeat;
+	background:#9F9 url(../images/CannedCukes.png) 10px 10px no-repeat;
 	margin:0px;
 	padding:30px;
 	border-bottom:3px solid #396;
@@ -208,10 +208,11 @@ margin-top:30px;
 }
 
 #navcontainer h1 {
+	
 	padding:0px;
 	float:left;
 	margin:0px;
-	margin-left: 110px;
+	margin-left: 130px;
 }
 
 #navcontainer h1 a {
@@ -242,16 +243,25 @@ color:white;
 }
 
 .scenario {
-	border:2px solid #393;
-	margin-top:20px;
-	padding:0px;
-	padding-bottom:15px;
+	margin-top:15px;
+	padding:6px;
+	padding-left:15px;
+	border-left:2px solid #396;
 }
 
+.scenario em {
+	font-size:0.8em;
+	color:#6C9;
+}
+
+.scenario .links {
+	background:#9F9;
+	padding:2px;
+}
 .scenario h3 {
-	padding:5px;
+	font-size:1em;
 	margin:0px;
-	background:#393;
+	padding:0px;
 }
 
 .scenario pre {
@@ -263,10 +273,8 @@ color:white;
 	padding-left:5px;
 }
 
-.scenario a {
-	margin-left:15px;	
+.scenario a {	
 }
 
 .syntaxhighlighter .lines {
-	margin-left:15px;
 }

@@ -1,5 +1,5 @@
 class ScenariosController < ApplicationController
-  before_filter :login_required
+  before_filter :login_required, :except => [:index, :show]
   before_filter :assign_feature
   
   def index
@@ -92,7 +92,13 @@ class ScenariosController < ApplicationController
   protected
   def assign_feature
     if params[:feature_id].present?
-      @feature = current_user.features.find(params[:feature_id])
+      
+      if logged_in?
+        @feature = current_user.features.find(params[:feature_id])
+      else
+        @feature = Feature.find(params[:feature_id])
+        @user = @feature.user
+      end
       if @feature.blank?
         flash[:error] = "Oops! couldn't find the feature you are looking for."
         redirect_to dashboard_url
