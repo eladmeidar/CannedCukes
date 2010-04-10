@@ -1,9 +1,4 @@
 <div id="navcontainer">
-<% if logged_in? %>
-<h1><a href="/dashboard">CannedCukes</a></h1>
-<% else %>
-<h1><a href="/">CannedCukes</a></h1>
-<% end %>
 <ul id="navlist">
 	<li><%= link_to "Search Scenarios", scenarios_url%></li>
 <% if logged_in? -%>
@@ -16,5 +11,4 @@
 <% end -%>
 </ul>
 <div class="clear"></div>
-
 </div>

@@ -150,19 +150,27 @@ text-align:center;
 margin-top:30px;
 }
 
+.flash {
+	-moz-border-radius: 15px;  
+    -khtml-border-radius: 15px;  
+    -webkit-border-radius: 15px;
+	margin:0px auto;
+	margin-top:20px;
+	width:770px;
+	font-size:17px;
+}
 #flash_notice, #flash_error {
   padding: 5px 8px;
-  margin: 10px 0;
 }
 
 #flash_notice {
   background-color: #CFC;
-  border: solid 1px #6C6;
+  border: solid 2px #363;
 }
 
 #flash_error {
   background-color: #FCC;
-  border: solid 1px #C66;
+  border: solid 2px #C66;
 }
 
 .fieldWithErrors {
@@ -207,6 +215,7 @@ margin-top:30px;
 #navcontainer {
 	background:#9F9 url(../images/CannedCukes.png) 10px 10px no-repeat;
 	margin:0px;
+	height:90px;
 	padding:30px;
 	border-bottom:3px solid #396;
 	
