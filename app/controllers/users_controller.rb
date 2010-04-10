@@ -47,7 +47,6 @@ class UsersController < ApplicationController
   end
   
   def verify_credentials
-  
       respond_to do |page|
         page.html { render :nothing => true, :status => 200}
         page.json { render :nothing => true, :status => 200 }
