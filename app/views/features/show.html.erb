@@ -35,7 +35,10 @@
 <% if logged_in? && current_user == @user %>
 <div id="links">
 	<% if logged_in? && current_user == @feature.user %>
-	<%= link_to 'Edit this feature', edit_user_feature_url(@user, @feature)%> | <%= link_to 'Add a new Scenario', new_user_feature_scenario_url(@user, @feature) %> or <%= link_to 'View all Features', user_features_url(@user)%>
+	<%= link_to 'Edit this feature', edit_user_feature_url(@user, @feature)%> | 
+	<%= link_to 'Add a new Scenario', new_user_feature_scenario_url(@user, @feature) %> | 
+	<%= link_to 'View all Features', user_features_url(@user)%> |
 	<% end %>
+	<%= link_to 'Download this Feature', user_feature_url(@user, @feature, :format => 'txt') %>
 </div>
 <% end %>

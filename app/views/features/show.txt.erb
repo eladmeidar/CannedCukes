@@ -1,4 +1,5 @@
 Feature:  <%= @feature.title %>
+  <%= @feature.body.gsub("\n", "\n  ")%>
 
 <% @feature.scenarios.each do |scenario| -%>
   Scenario: <%= scenario.title%>
