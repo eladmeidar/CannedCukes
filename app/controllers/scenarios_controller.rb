@@ -93,12 +93,13 @@ class ScenariosController < ApplicationController
   def assign_feature
     if params[:feature_id].present?
       
-      if logged_in?
-        @feature = current_user.features.find(params[:feature_id])
-      else
+   #   if logged_in?
+   #      @feature = current_user.features.find(params[:feature_id])
+  #      @user = @feature.user
+  #    else
         @feature = Feature.find(params[:feature_id])
         @user = @feature.user
-      end
+  #    end
       if @feature.blank?
         flash[:error] = "Oops! couldn't find the feature you are looking for."
         redirect_to dashboard_url
