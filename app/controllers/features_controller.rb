@@ -24,7 +24,7 @@ class FeaturesController < ApplicationController
   end
 
   def show
-    @feature = @user.features.find(params[:feature_id] || params[:id])
+    @feature = Feature.find(params[:feature_id] || params[:id])
     
     respond_to do |page|
       page.html
