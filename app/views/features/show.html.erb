@@ -1,5 +1,6 @@
 <% title "Feature: #{@feature.title}"%>
 
+<pre class="brush: cuke"><%= h(@feature.body) %></pre>
 <% if @feature.scenarios.empty? %>
 	<p>
 		You don't have any scenarios set for this feature. <%= link_to "Add your own", new_user_feature_scenario_url(@user, @feature) %> or <%= link_to 'Search', scenarios_url %>.
@@ -9,6 +10,7 @@
 		<thead>
 			<tr>
 				<th>Title</th>
+				<th>Body</th>
 				<th>Actions</th>
 			</tr>
 		</thead>
@@ -16,6 +18,7 @@
 			<% @feature.scenarios.each do |scenario| %>
 				<tr>
 					<td><%= scenario.title %></td>
+					<td><pre class="brush: cuke"><%= h(scenario.body) %></pre></td>
 					<td>
 					<%= link_to 'Show', user_feature_scenario_url(@user, @feature, scenario) %> 
 							<% if logged_in? && current_user == @user %>
@@ -30,5 +33,7 @@
 	</table>
 <% end %>
 <% if logged_in? && current_user == @user %>
-	<%= link_to 'Add a new Scenario', new_user_feature_scenario_url(@user, @feature) %> or <%= link_to 'View all Features', user_features_url(@user)%>
+<div id="links">
+	<%= link_to 'Edit this feature', edit_user_feature_url(@user, @feature)%>, <%= link_to 'Add a new Scenario', new_user_feature_scenario_url(@user, @feature) %> or <%= link_to 'View all Features', user_features_url(@user)%>
+</div>
 <% end %>

@@ -1,7 +1,7 @@
 SyntaxHighlighter.brushes.Cucumber = function()
 {
 	var funcs		= 'pizikabubu asdccdsdvvvf';
-	var keywords	= 'Feature Scenario I And Then When Given';
+	var keywords	= 'Feature Scenario I And Then When Given In Order As a want';
 	var operators	= 'asdcdcxzfddf maks ksmd asd dasaddasd';
 
 	this.regexList = [

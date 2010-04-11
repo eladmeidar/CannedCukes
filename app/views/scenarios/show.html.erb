@@ -6,4 +6,6 @@
 	<dd><pre class="brush: cuke"><%= h(@scenario.body) %></pre></dd>
 </dl>
 <div class="clear"></div>
-<%= link_to 'Go back to feature page', user_feature_url(@feature.user, @feature)%> | <%= link_to 'Download Scenario', user_feature_scenario_url(@feature.user, @feature, @scenario, :format => 'txt') %>
+<div id="links">
+<%= link_to 'Go back to feature page', user_feature_url(@feature.user, @feature)%> or <%= link_to 'Download this Scenario', user_feature_scenario_url(@feature.user, @feature, @scenario, :format => 'txt') %>
+</div>

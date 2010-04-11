@@ -22,7 +22,7 @@ form {
 
 h1 {
 	color:#063;
-	font-size:3.1em;
+	font-size:2.1em;
 	padding:0px;
 	margin:0px;
 }
@@ -33,6 +33,10 @@ fieldset#login {
 	margin:0px auto;
 }
 
+#links {
+	margin-top:10px;
+	margin-bottom:10px;
+}
 input[type="text"], input[type="password"], textarea {
 	border:1px solid #093;
 	padding:5px;
