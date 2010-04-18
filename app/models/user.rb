@@ -96,6 +96,10 @@ class User < ActiveRecord::Base
     "#{id}-#{sluggify(login)}"
   end
   
+  def to_safe_json
+    self.to_json(:except => [:salt, :reset_token, :remember_token_expires_at, :crypted_password, :activation_code, :remember_token])
+  end
+  
   protected
     
     def make_activation_code
