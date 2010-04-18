@@ -1,4 +1,22 @@
 <% title "#{current_user.login}'s Account"%>
+<h2>Actions</h2>
 <ul>
 	<li><%= link_to "Reset my password", reset_password_url%></li>
 </ul>
+<h2>API</h2>
+<% if current_user.api_is_enabled? %>
+  <p>
+    Your API Key: 
+    (<%= link_to "re-generate", user_api_key_path(current_user), :method => :post %> | <%= link_to "disable", user_api_key_path(current_user), :method => :delete %>)
+  </p>
+  <p>
+    <strong><%= current_user.api_key %></strong>
+  </p>
+<% else %>
+  <p>	
+    You'll need a unique key to make calls to the API.  Remember to keep this key a secret as it can be used to access your account.
+  </p>
+  <p>
+    <%= link_to("Get a key", user_api_key_path(current_user), :method => :post) %>
+  </p>
+<% end %>

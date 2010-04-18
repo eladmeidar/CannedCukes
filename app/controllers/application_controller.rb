@@ -9,4 +9,9 @@ class ApplicationController < ActionController::Base
   
   # Scrub sensitive parameters from your log
   filter_parameter_logging :password, :password_confirmation
+  
+  def login_from_api_key
+    self.current_user = User.find_by_api_key(params[:api_key]) unless params[:api_key].empty?
+  end
+  
 end
