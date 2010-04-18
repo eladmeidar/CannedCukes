@@ -9,6 +9,8 @@ ActionController::Routing::Routes.draw do |map|
   # Activation
   map.activate '/activate/:activation_code', :action => 'activate', :controller => 'users', :activation_code => ''
   
+  # API user verification
+  map.verify_user '/verify_credentials.:format', :controller => 'users', :action => 'verify_credentials', :format => :html
   # Password restore
   map.forgot_password '/forgot', :controller => 'users', :action => 'forgot'
   map.reset_instructions '/reset_password_instructions', :controller => 'users', :action => 'reset_instructions'

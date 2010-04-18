@@ -2,7 +2,7 @@ class UsersController < ApplicationController
   # Be sure to include AuthenticationSystem in Application Controller instead
   include AuthenticatedSystem
   
-  before_filter :login_required, :only => [:show]
+  before_filter :login_required, :only => [:show, :verify_credentials]
   
   # render new.html.erb
   def new
@@ -44,6 +44,13 @@ class UsersController < ApplicationController
   end
   
   def show
+  end
+  
+  def verify_credentials
+    respond_to do |page|
+      page.html { render :nothing => true, :status => 200}
+      page.json { render :json => current_user.to_safe_json }
+    end
   end
   
   def reset_password

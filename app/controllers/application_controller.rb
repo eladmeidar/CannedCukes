@@ -11,7 +11,7 @@ class ApplicationController < ActionController::Base
   filter_parameter_logging :password, :password_confirmation
   
   def login_from_api_key
-    self.current_user = User.find_by_api_key(params[:api_key]) unless params[:api_key].empty?
+    self.current_user = User.find_by_api_key(params[:api_key]) if params[:api_key].present?
   end
   
 end

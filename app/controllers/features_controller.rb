@@ -3,6 +3,9 @@ class FeaturesController < ApplicationController
 	before_filter :login_required, :except => [:show]
 	before_filter :assign_user
 	
+	skip_before_filter :verify_authenticity_token, :only => [:create]
+  before_filter :force_verify_authenticity_token, :only => [:create]
+  
   def index
     @features = current_user.features
     
@@ -106,6 +109,10 @@ class FeaturesController < ApplicationController
   end
 
   protected
+  
+  def force_verify_authenticity_token
+    verify_authenticity_token unless request.format == :json # Or whatever other criteria you would use
+  end
   
   def assign_user
     if logged_in?
