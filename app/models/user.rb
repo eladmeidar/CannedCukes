@@ -92,6 +92,22 @@ class User < ActiveRecord::Base
     end
   end
   
+  # API
+  def enable_api!
+    self.generate_api_key!
+  end
+
+  def disable_api!
+    self.update_attribute(:api_key, nil)
+  end
+
+  def api_is_enabled?
+    self.api_key.present?
+  end
+  
+  
+  # Converstions
+  
   def to_param
     "#{id}-#{sluggify(login)}"
   end
@@ -100,11 +116,16 @@ class User < ActiveRecord::Base
     self.to_json(:except => [:salt, :reset_token, :remember_token_expires_at, :crypted_password, :activation_code, :remember_token])
   end
   
+  
   protected
     
-    def make_activation_code
-        self.activation_code = self.class.make_token
-    end
+  def make_activation_code
+    self.activation_code = self.class.make_token
+  end
+
+  def generate_api_key!
+    self.update_attribute(:api_key, self.class.make_token)
+  end
 
 
 end
