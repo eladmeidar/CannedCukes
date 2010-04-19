@@ -11,7 +11,7 @@ class FeaturesController < ApplicationController
     
     respond_to do |page|
       page.html 
-      page.json { render :json => @features }
+      page.json { render :json => @features.to_json(:include => [:scenarios]) }
       page.xml { render :xml => @features }
     end
   end
